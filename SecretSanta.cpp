@@ -10,16 +10,12 @@ void randomNumList(vector<unsigned>&);
 void posNumToName(const vector<unsigned>&, vector<string>&);
 void selectionSort(vector<unsigned>&, vector<unsigned>&);
 
-int main(int argc, char* argv[]) {
+int main() {
     cout << "Thanks for using Secret Santa Random gifting generator!" << endl;
-    if (argc != 2) {
-        cout << "Wrong number of input on command line. Program exiting.";
-        return 1;
-    }
 
     vector<string> nameList;
     ifstream inFS;
-    inFS.open(argv[1]);
+    inFS.open("participants.txt");
     if(!inFS.is_open()) {
         cout << "Unable to open file" << endl;
         return 1;
